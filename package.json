@@ -1,0 +1,19 @@
+{
+  "name": "my-component",
+  "version": "1.0.0",
+  "description": "My Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radogado/my-component.git"
+  },
+  "author": "Author",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radogado/my-component/issues"
+  },
+  "homepage": "https://github.com/radogado/my-component#readme"
+}

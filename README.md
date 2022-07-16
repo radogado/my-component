@@ -1,2 +1,2 @@
-# my-component
-My Component
+# My Component
+
