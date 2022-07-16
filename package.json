@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/radogado/my-new-component/issues"
   },
-  "homepage": "https://github.com/radogado/my-new-component#readme"
+  "homepage": "https://github.com/radogado/my-new-component#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.1",
+    "gzip-size-cli": "^5.1.0",
+    "terser": "^5.14.2"
+  }
 }
