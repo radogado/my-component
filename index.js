@@ -1,1 +1,1 @@
-import './my-component.js';
+import './n-component.js';
