@@ -1,5 +1,5 @@
 {
-  "name": "n-component",
+  "name": "my-new-component",
   "version": "1.0.0",
   "description": "My Component",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/radogado/n-component.git"
+    "url": "git+https://github.com/radogado/my-new-component.git"
   },
   "author": "Author",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/radogado/n-component/issues"
+    "url": "https://github.com/radogado/my-new-component/issues"
   },
-  "homepage": "https://github.com/radogado/n-component#readme"
+  "homepage": "https://github.com/radogado/my-new-component#readme"
 }
