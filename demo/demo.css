@@ -8,44 +8,19 @@ body {
   box-sizing: border-box;
   line-height: 1.333;
   margin: 0 auto;
-  max-width: 1280px;
   border: 1em solid transparent;
 }
 
-.demo {
-  gap: 1em;
-}
-@media (min-width: 600px) {
-  .demo {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 600px) {
-  h3 {
-    columns: 3;
-    column-gap: 1rem;
-  }
-}
-h3 {
-  line-height: 1.5;
-  font-size: 0;
-}
-
-h3 span {
-  font-size: 1.02rem;
-  line-height: 1.25;
-  background: antiquewhite;
-  color: #007575;
-  padding: 0.1333em 0.333em;
-  display: inline-block;
-  margin-inline-end: 0.25em;
-  font-weight: normal;
+ul {
+  padding: 0;
 }
 
 a[href] {
   color: inherit;
+}
+
+* {
+  line-height: 1.5;
 }
 
 form button {
@@ -58,17 +33,6 @@ form button {
   padding: 0.5em 1em;
   font: inherit;
   cursor: pointer;
-}
-
-.gradient {
-  background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
-}
-
-.transparent-select .n-select,
-.transparent-select .n-select--options {
-  --control-bg: transparent;
-  --control-active-bg: transparent;
-  --control-highlight: transparent;
 }
 
 h1:before,
@@ -91,12 +55,8 @@ h1:before {
   display: unset;
 }
 
-[href="n-select.min.css"],
-[href="n-select.min.js"] {
-  text-decoration: none;
-}
-[href="n-select.min.css"]:after,
-[href="n-select.min.js"]:after {
+[href*=".min.css"]:after,
+[href*=".min.js"]:after {
   content: attr(data-size);
   padding-inline-start: 1ch;
   min-width: 6ch;
@@ -104,12 +64,12 @@ h1:before {
   font-size: 0.75em;
   vertical-align: top;
 }
-[href="n-select.min.css"][data-size="0.0 KB"]:after,
-[href="n-select.min.js"][data-size="0.0 KB"]:after {
+[href*=".min.css"][data-size="0.0 KB"]:after,
+[href*=".min.js"][data-size="0.0 KB"]:after {
   opacity: 0;
 }
-[href="n-select.min.css"] b,
-[href="n-select.min.js"] b {
+[href*=".min.css"] b,
+[href*=".min.js"] b {
   text-decoration: underline;
   min-width: 4ch;
   display: inline-block;
@@ -150,16 +110,6 @@ h1:before {
   padding: 0.25em 1em;
 }
 
-label {
-  margin-top: 2em;
-  display: block;
-}
-
-#form-data {
-  max-width: 100%;
-  overflow: auto;
-}
-
 .source {
   display: flex;
   flex-wrap: wrap;
@@ -175,12 +125,48 @@ label {
   font: inherit;
 }
 
-#form-data {
+.component-options {
   margin: 1em 0;
 }
-#form-data pre {
-  white-space: pre-wrap;
+.component-options label {
+  margin-inline-end: 2ch;
   line-height: 1.5;
+  white-space: nowrap;
+  user-select: none;
+  display: inline-grid;
+  grid-template: 1fr/auto 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 0.5ch;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.component-options span,
+.component-options input {
+  grid-row: 1;
+  grid-column: 1;
+  width: 1.25ch;
+  height: 1.25ch;
+  border-radius: 2px;
+}
+.component-options span {
+  display: inline-block;
+  background: var(--control-bg, black);
+  z-index: -1;
+}
+.component-options input {
+  border: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.component-options input:checked + span {
+  background: var(--control-color, white);
+  border: 3px solid var(--control-bg, black);
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=demo.css.map */

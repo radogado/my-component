@@ -8,7 +8,6 @@
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes" />
 	<link href="my-new-component" rel="styleSheet" />
-	<!-- <link href="demo/prism.min.css" rel="styleSheet" /> -->
 	<link href="demo/prism-tomorrow.min.css" rel="styleSheet" />
 	<link href="demo/demo.css" rel="styleSheet" />
 	<script src="my-new-component.js" type="module"></script>
@@ -18,7 +17,47 @@
 <body>
 	<main>
 		<h1>My New Component</h1>
+		<h2>This is a component which does this and that</h2>
+		<h3>Features</h3>
+		<ul>
+			<li>First</li>
+			<li>Second</li>
+		</ul>
+		<h2>Demo</h2>
+		<section>
+			<div class="my-new-component">
+				Component instance
+			</div>
+
+			<div class="code">
+				<pre class="language-markup"><code class="language-markup">&lt;div class="my-new-component"&gt;
+	Component instance
+&lt;/div&gt;</code></pre>
+			</div>
+
+			<div class="component-options">
+				<label>
+					<input type="checkbox" data-class="my-new-component--variant" /><span></span> Variant</label>
+			</div>
+
+		</section>
+
 	</main>
+	<aside>
+
+		<h2>Source</h2>
+
+		<ul>
+			<li><a href="https://www.npmjs.com/package/my-new-component">npm i --save-dev my-new-component</a></li>
+			<li><a href="https://github.com/radogado/my-new-component">GitHub</a></li>
+			<li><a href="my-new-component.scss">SCSS file</a></li>
+			<li><a href="my-new-component.js">JS file</a></li>
+			<li><a href="my-new-component.min.css">Minimised CSS file</a></li>
+			<li><a href="my-new-component.min.js">Minimised JS file</a></li>
+		</ul>
+
+
+	</aside>
 
 	<script>
 		function copyButton(el, target, echo) {
@@ -54,6 +93,26 @@
 			.then((text) => {
 				document.querySelector("h1").dataset.version = text.version.split(".")[0] + "." + text.version.split(".")[1];
 			});
+
+		document.querySelectorAll(".component-options input").forEach((el) => {
+			el.onchange = (e) => {
+				let el = e.target;
+				let component = el.closest('section').querySelector(".my-new-component");
+				let snippet = false;
+				[...el.closest('section').querySelectorAll("code .attr-value")].forEach((el) => {
+					if (!snippet && el.childNodes[2].textContent.match(/my-new-component/) && el.previousElementSibling.textContent.match(/class/)) {
+						snippet = el.childNodes[2];
+					}
+				});
+				if (el.checked) {
+					component.classList.add(el.dataset.class);
+					snippet.textContent += ` ${el.dataset.class}`;
+				} else {
+					component.classList.remove(el.dataset.class);
+					snippet.textContent = snippet.textContent.replace(` ${el.dataset.class}`, "").trim();
+				}
+			};
+		});
 	</script>
 </body>
 
