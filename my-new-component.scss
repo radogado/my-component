@@ -1,3 +1,6 @@
 .my-new-component {
 	display: initial;
+	&--variant {
+		font-style: italic;
+	}
 }

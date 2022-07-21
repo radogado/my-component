@@ -125,9 +125,6 @@ h1:before {
   font: inherit;
 }
 
-.component-options {
-  margin: 1em 0;
-}
 .component-options label {
   margin-inline-end: 2ch;
   line-height: 1.5;
