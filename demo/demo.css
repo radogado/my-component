@@ -6,7 +6,7 @@
   --font-size: 16px;
   font-size: var(--font-size, 16px);
   line-height: 1.5;
-  --control-bg: darkslateblue;
+  --control-bg: #ad421b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -211,7 +211,7 @@ form button {
   padding: 0;
 }
 .component-options input:checked + span {
-  background: var(--control-color, white);
+  background: var(--color, white);
   border: 3px solid var(--control-bg, black);
   box-sizing: border-box;
 }
